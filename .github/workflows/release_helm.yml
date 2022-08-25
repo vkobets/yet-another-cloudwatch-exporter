@@ -2,7 +2,7 @@ on:
   push:
     # Sequence of patterns matched against refs/tags
     branches:
-      - master
+      - temp
 
 name: Build, test and publish
 jobs:
