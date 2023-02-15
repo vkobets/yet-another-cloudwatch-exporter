@@ -1,3 +1,172 @@
+# v0.48.0-alpha
+
+**Bugfixes and features**:
+* Revert "Publish helm chart before releasing binaries".
+
+**Full Changelog**: https://github.com/nerdswords/yet-another-cloudwatch-exporter/compare/v0.47.0-alpha...v0.48.0-alpha
+
+# v0.47.0-alpha
+
+**Bugfixes and features**:
+* Add Elemental MediaLive, MediaConnect to supported services by @davemt
+* Add support for OpenSearch Serverless by @Hussainoxious
+* Makefile: always add build version ldflags by @cristiangreco
+* Publish helm chart before releasing binaries by @cristiangreco
+* Build with Go 1.20 by @cristiangreco
+
+**Dependencies**:
+* Bump github.com/aws/aws-sdk-go from 1.44.192 to 1.44.194
+* Bump github.com/urfave/cli/v2 from 2.24.2 to 2.24.3
+
+**Full Changelog**: https://github.com/nerdswords/yet-another-cloudwatch-exporter/compare/v0.46.0-alpha...v0.47.0-alpha
+
+# 0.46.0-alpha
+
+**Breaking changes**:
+- If you use Yace as a library: this release changes the package
+  name `pkg/logger` to `pkg/logging`.
+
+**Bugfixes and features**:
+* Fix to set logging level correctly by @cristiangreco
+* ct: disable validate-maintainers by @cristiangreco
+
+**Dependencies**:
+* Bump github.com/aws/aws-sdk-go from 1.44.189 to 1.44.192
+
+**Full Changelog**: https://github.com/nerdswords/yet-another-cloudwatch-exporter/compare/helm-chart-0.11.0...v0.46.0-alpha
+
+# 0.45.0-alpha
+
+**Breaking changes**:
+- Note if you use Yace as a library: this release changes the signature
+  of `config.Load` method.
+
+**Bugfixes and features**:
+* Helm chart update to customize port name by @nikosmeds
+* Clear up docs and re-organize sections by @thepalbi
+* Helm: add README file template by @cristiangreco
+* Config parsing: emit warning messages for invalid configs by @cristiangreco
+* Pre-compile dimensions regexps for supported services by @cristiangreco
+* AWS/DX: add more dimension regexps by @cristiangreco
+
+**Dependencies**:
+* Bump github.com/aws/aws-sdk-go from 1.44.182 to 1.44.189
+* Bump github.com/urfave/cli/v2 from 2.23.7 to 2.24.2
+* Bump golangci/golangci-lint-action from 3.3.1 to 3.4.0
+
+**Full Changelog**: https://github.com/nerdswords/yet-another-cloudwatch-exporter/compare/v0.44.0-alpha...v0.45.0-alpha
+
+# 0.44.0-alpha
+
+**Breaking changes**:
+- Note if you use Yace as a library: this release changes the packages
+  and funcs exported publicly, you will need to review the imports
+  (although signatures are mostly unchanged)
+
+**Bugfixes and features**:
+* Refactor code into separate packages by @cristiangreco
+* Refactor list of supported services and filter funcs by @cristiangreco
+* Wrap debug logging to avoid expensive operations by @cristiangreco
+* Fix to use length of metrics level on customNamespace by @masshash
+* feat: bump helm chart by @rasta-rocket
+* feat: release helm chart when Chart.yml is updated by @rasta-rocket
+* Add test for configuration of services list by @cristiangreco
+* GolangCI: review linters settings by @cristiangreco
+
+**Dependencies**:
+* Bump azure/setup-helm from 1 to 3
+* Bump docker/setup-buildx-action from 1 to 2
+* Bump docker/setup-qemu-action from 1 to 2
+* Bump github.com/aws/aws-sdk-go from 1.44.175 to 1.44.182
+* Bump github.com/prometheus/client_golang from 1.13.0 to 1.14.0
+* Bump helm/chart-releaser-action from 1.4.1 to 1.5.0
+* Bump helm/kind-action from 1.2.0 to 1.5.0
+
+**Full Changelog**: https://github.com/nerdswords/yet-another-cloudwatch-exporter/compare/v0.43.0-alpha...v0.44.0-alpha
+
+# 0.43.0-alpha
+
+* add support to custom namespaces with their dimensions (by @arielly-parussulo)
+* Optimise support for custom namespaces to use GetMetricData API (by @code-haven)
+* GH workflows: run "publish" workflows only in this repo. (by @cristiangreco)
+* Bump Go version to 1.19 for CI and docker image. (by @cristiangreco)
+* Fix not to refer to loop variable in a goroutine (by @masshash)
+* Validate tags when converting to prometheus labels (by @cristiangreco)
+* Bump github.com/aws/aws-sdk-go from 1.44.127 to 1.44.167
+* Bump golangci/golangci-lint-action from 3.3.0 to 3.3.1
+* Bump github.com/urfave/cli/v2 from 2.23.0 to 2.23.7
+
+# 0.42.0-alpha
+
+* Resolve logging issue (@datsabk)
+* MediaTailor - Correct dimension regex for MT (@scott-mccracken)
+* Helm chart update for optional test-connection pod (@nikosmeds)
+* Helm chart update to set priorityClassName (@nikosmeds)
+* Bump github.com/aws/aws-sdk-go from 1.44.122 to 1.44.127
+* Bump github.com/urfave/cli/v2 from 2.20.3 to 2.23.0
+
+# 0.41.0-alpha
+
+* Clean up unused variables. (@cristiangreco)
+* Fix typo: sts-endpoint should be sts-region. (@cristiangreco)
+* Enabled Managed prometheus metrics (@datsabk)
+* Add support for AWS Kafka Connect (@cgowthaman)
+* Import CloudWatch mixin. (@jeschkies)
+* main.go refactoring: define cmd action as a separate func. (@cristiangreco)
+* Add support for EMR Serverless (@cgowthaman)
+
+# 0.40.0-alpha
+* Fix typo in Charts.yml (@yasharne)
+* Subcommand `verify-config` actually validates the config file. (@cristiangreco)
+* Add dimensions regex for AmazonMQ. (@cristiangreco)
+* Fix metrics with additional dimensions being not being scraped. (@cristiangreco)
+* Remove unused code, add test for RemoveDuplicateMetrics. (@cristiangreco)
+* Bump github.com/sirupsen/logrus
+* Bump github.com/urfave/cli/v2
+* Bump github.com/aws/aws-sdk-go
+* Bump actions/setup-python
+
+# 0.39.0-alpha
+* Improve code quality and unblock this release (cristiangreco)
+* Add helm chart (vkobets)
+* Fix DX metrics (paulojmdias)
+* Fix searchTags and bad dimension name (femiagbabiaka)
+* Handle empty list in filter metric tests (mtt88)
+* Add AWS Elemental MediaTailor support (scott-mccracken)
+* Support storagegateway metrics (sedan07)
+* Filter api gateway resources to skip "stages" (ch4rms)
+* Bump aws-sdk, urfave/cli, prometheus/client_golang
+
+# 0.38.0-alpha
+
+* Set max page size for tagging API requests (#617)
+* Build with Go 1.18
+
+# 0.37.0-alpha
+* New config `dimensionNameRequirements` allows autodiscovery jobs to only
+  fetch metrics that include specified dimensions (jutley)
+* Update deps
+
+# 0.36.2-alpha
+* Cost Reduction - Use less API requests if no tagged resources are found (cristiangreco)
+* Update deps
+
+# 0.36.1-alpha
+* Use structured logs for logging interface (kgeckhart)
+
+# 0.36.0-alpha
+
+* *BREAKING CHANGE FOR LIBRARY USERS* Major refactoring of usage of logging library (kgeckhart)
+* Minor update of deps and security patches (urfave/cli/v2, golangci/golangci-lint-action, github.com/prometheus/client_golang, github.com/stretchr/testify, github.com/aws/aws-sdk-go
+* Updates of Readme (markwallsgrove)
+
+# 0.35.0-alpha
+* Update dependencies
+* Improve / Document way how to use the exporter as external library (kgeckhart)
+* Refactor label consistency (kgeckhart)
+* Add suppot for vpc-endpoint (AWS/PrivateLinkEndpoints) (aleslash)
+* Add support for vpc-endpoint-service (AWS/PrivateLinkServices) (aleslash)
+
 # 0.34.0-alpha
 * Update dependencies
 * Add weekly dependabot updates (jylitalo)
@@ -158,7 +327,7 @@ Freshly shipped new integrations:
 
 - Make exporter a library. (jeschkies)
 - Add CLI option to validate config file (zswanson)
-- Fix multidimensional static metric (nmiculinic) 
+- Fix multidimensional static metric (nmiculinic)
 - Fix scrapes running in EKS fail after first scrape (rrusso1982)
 - Fix Docker build (jeschkies)
 - Allow to use this project in China (insectme)
@@ -481,7 +650,7 @@ aws_elb_request_count_sum
 period: 60
 length: 900
 delay: 300
-``` 
+```
 
 # 0.10.0
 * Reduce usage of listMetrics calls (nhinds)
@@ -658,4 +827,3 @@ jobs:
 * Implement minimum, average, maximum, sum for cloudwatch api
 * Implement way to handle multiple data returned by cloudwatch
 * Update go dependencies
-
